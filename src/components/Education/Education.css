@@ -1,0 +1,39 @@
+.education__item {
+  background: #FAF9F8;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.education__item input,
+.education__item select {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid #E8E6E3;
+  color: #2C2C2C;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Адаптив */
+@media screen and (max-width: 768px) {
+  .education__item {
+    padding: 12px !important;
+  }
+  
+  .education__item input,
+  .education__item select {
+    font-size: 14px !important;
+    padding: 8px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .education__item input,
+  .education__item select {
+    font-size: 13px !important;
+  }
+}

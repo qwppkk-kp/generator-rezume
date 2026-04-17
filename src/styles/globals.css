@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-bg: #FAF9F8;
+  --color-card: #FFFFFF;
+  --color-primary: #7C6E65;
+  --color-secondary: #E8E6E3;
+  --color-text: #2C2C2C;
+  --color-text-light: #6B6B6B;
+  --color-error: #C77D6E;
+  --color-border: #E8E6E3;
+  --transition: all 0.3s ease;
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+}
+
+/* темная тема */
+body.dark-theme {
+  --color-bg: #1a1a1a;
+  --color-card: #2d2d2d;
+  --color-primary: #ac9584;
+  --color-secondary: #3d3d3d;
+  --color-text: #e0e0e0;
+  --color-text-light: #a0a0a0;
+  --color-border: #404040;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+
+/* Планшеты и маленькие ноутбуки */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: var(--container-width-md);
+  }
+  
+  .app__container {
+    gap: 30px !important;
+  }
+}
+
+/* Смартфоны */
+@media screen and (max-width: 768px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+  
+  /* Основная структура — одна колонка */
+  .app__container {
+    flex-direction: column !important;
+  }
+  
+  .form-section,
+  .preview-section {
+    width: 100% !important;
+    min-width: auto !important;
+  }
+  
+  /* Предпросмотр больше не липкий */
+  .preview-sticky {
+    position: static !important;
+  }
+  
+  /* Отступы */
+  .main-content {
+    padding: 20px 15px !important;
+  }
+  
+  /* Заголовки */
+  h1 {
+    font-size: 20px !important;
+  }
+  
+  h2 {
+    font-size: 18px !important;
+  }
+  
+  h3 {
+    font-size: 16px !important;
+  }
+  
+
+  input, textarea, select {
+    font-size: 16px !important; 
+    padding: 12px !important;
+  }
+  
+  button {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+  
+  .education__item,
+  .experience__item {
+    padding: 12px !important;
+  }
+  
+  .education__item input,
+  .education__item select,
+  .experience__item input,
+  .experience__item select,
+  .experience__item textarea {
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+  
+  .experience__year-group {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .experience__year-group > div {
+    width: 100% !important;
+  }
+  
+  .experience__year-group span {
+    display: none;
+  }
+  
+  .controls {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .controls button {
+    width: 100% !important;
+  }
+  
+  .template-selector {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  
+  .template-selector button {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+  }
+  
+  .photo-upload__preview img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .preview-contacts {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  
+  .form-card,
+  .preview-card {
+    padding: 16px !important;
+  }
+}
+
+/* Очень маленькие смартфоны (до 480px) */
+@media screen and (max-width: 480px) {
+  .main-content {
+    padding: 15px 12px !important;
+  }
+  
+  h1 {
+    font-size: 18px !important;
+  }
+  
+  h2 {
+    font-size: 16px !important;
+  }
+  
+  input, textarea, select {
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+  
+  button {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+  }
+  
+  .form-card,
+  .preview-card {
+    padding: 12px !important;
+  }
+  
+  .photo-upload__preview img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .template-selector button {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+}
+
