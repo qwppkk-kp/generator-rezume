@@ -18,7 +18,7 @@
   font-size: 14px;
 }
 
-/* Адаптив */
+/* адаптив */
 @media screen and (max-width: 768px) {
   .education__item {
     padding: 12px !important;

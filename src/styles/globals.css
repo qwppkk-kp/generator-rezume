@@ -65,7 +65,6 @@ body {
     width: var(--container-width-sm);
   }
   
-  /* Основная структура — одна колонка */
   .app__container {
     flex-direction: column !important;
   }
@@ -76,17 +75,16 @@ body {
     min-width: auto !important;
   }
   
-  /* Предпросмотр больше не липкий */
   .preview-sticky {
     position: static !important;
   }
   
-  /* Отступы */
+  
   .main-content {
     padding: 20px 15px !important;
   }
   
-  /* Заголовки */
+  
   h1 {
     font-size: 20px !important;
   }

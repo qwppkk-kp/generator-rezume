@@ -33,20 +33,18 @@ const SimpleCropper = ({ image, onSave, onClose }) => {
   canvas.width = 200;
   canvas.height = 200;
   
-  // Получаем размеры контейнера (круглой области)
   const container = document.querySelector('.cropper-container');
   if (!container) return;
   
   const containerRect = container.getBoundingClientRect();
   const imgRect = img.getBoundingClientRect();
   
-  // Вычисляем, какая часть изображения видна внутри круга
   const visibleLeft = (containerRect.left - imgRect.left) / imgRect.width;
   const visibleTop = (containerRect.top - imgRect.top) / imgRect.height;
   const visibleWidth = containerRect.width / imgRect.width;
   const visibleHeight = containerRect.height / imgRect.height;
   
-  // Рисуем видимую область на canvas
+  
   ctx.drawImage(
     img,
     visibleLeft * img.naturalWidth,

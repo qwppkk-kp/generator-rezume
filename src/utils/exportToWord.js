@@ -2,10 +2,9 @@ import { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType } fro
 
 export const exportToWord = async (formData, photo, education, experience, skills, template) => {
   
-  // Создаём массив параграфов для документа
   const children = [];
 
-  // Заголовок (ФИО)
+  // (ФИО)
   children.push(
     new Paragraph({
       text: formData.name || 'Резюме',
@@ -15,7 +14,6 @@ export const exportToWord = async (formData, photo, education, experience, skill
     })
   );
 
-  // Контакты
   const contacts = [];
   if (formData.email) contacts.push(formData.email);
   if (formData.phone) contacts.push(formData.phone);
@@ -29,7 +27,7 @@ export const exportToWord = async (formData, photo, education, experience, skill
     })
   );
 
-  // Образование
+
   if (education.length > 0) {
     children.push(
       new Paragraph({
@@ -66,7 +64,6 @@ export const exportToWord = async (formData, photo, education, experience, skill
     });
   }
 
-  // Опыт работы
   if (experience.length > 0) {
     children.push(
       new Paragraph({
@@ -112,7 +109,6 @@ export const exportToWord = async (formData, photo, education, experience, skill
     });
   }
 
-  // Навыки
   if (skills) {
     children.push(
       new Paragraph({
@@ -129,7 +125,7 @@ export const exportToWord = async (formData, photo, education, experience, skill
     );
   }
 
-  // Создаём документ
+
   const doc = new Document({
     sections: [{
       properties: {},
@@ -137,7 +133,7 @@ export const exportToWord = async (formData, photo, education, experience, skill
     }]
   });
 
-  // Генерируем и скачиваем
+  // генерация и скачивание
   const blob = await Packer.toBlob(doc);
   const link = document.createElement('a');
   const url = URL.createObjectURL(blob);

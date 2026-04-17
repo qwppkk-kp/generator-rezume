@@ -31,7 +31,6 @@ function App() {
   const previewRef = useRef();
   const pdfRef = useRef();
 
-  // Вспомогательные функции для форматирования
   const capitalizeFirst = (str) => {
     if (!str) return str;
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -45,18 +44,16 @@ function App() {
     }).join(' ');
   };
 
-  // Валидация ФИО (минимум 2 слова)
   const validateName = (name) => {
     const words = name.trim().split(/\s+/);
     return words.length >= 2 && words.length <= 4;
   };
 
-  // Валидация email
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  // Форматирование телефона в маску +7 (xxx) xxx-xx-xx
+ 
   const formatPhone = (value) => {
     let numbers = value.replace(/\D/g, '');
     
@@ -90,11 +87,10 @@ function App() {
     return formatted;
   };
 
-  // Общая валидация перед экспортом
   const validateBeforeExport = () => {
     let isValid = true;
     
-    // Проверка образования
+   
     for (let i = 0; i < education.length; i++) {
       if (education[i].institution.trim() === '') {
         alert('Заполните учебное заведение в блоке образования');
@@ -103,7 +99,7 @@ function App() {
       }
     }
     
-    // Проверка опыта работы
+   
     if (isValid) {
       for (let i = 0; i < experience.length; i++) {
         if (experience[i].company.trim() === '') {
@@ -117,7 +113,6 @@ function App() {
     return isValid;
   };
 
-  // Обработчик изменения полей с форматированием
   const handleChange = (e) => {
     const { name, value } = e.target;
     let formattedValue = value;
@@ -131,7 +126,7 @@ function App() {
     
     setFormData({ ...formData, [name]: formattedValue });
     
-    // Валидация
+   
     if (name === 'name') {
       if (!validateName(formattedValue) && formattedValue !== '') {
         setErrors({ ...errors, name: 'Введите ФИО (минимум 2 слова)' });
@@ -155,7 +150,7 @@ function App() {
     }
   };
 
-  // Обработчик изменения телефона с маской
+
   const handlePhoneChange = (e) => {
     const formatted = formatPhone(e.target.value);
     setFormData({ ...formData, phone: formatted });
@@ -168,7 +163,7 @@ function App() {
     }
   };
 
-  // Сброс всех данных
+
   const handleReset = () => {
     setFormData({ name: '', email: '', phone: '', position: '' });
     setPhoto(null);
@@ -179,7 +174,7 @@ function App() {
     setErrors({});
   };
 
-  // Экспорт в PDF
+
   const handleExportPDF = () => {
     if (!validateBeforeExport()) return;
     
@@ -200,7 +195,7 @@ function App() {
     html2pdf().set(opt).from(element).save();
   };
 
-  // Загрузка из localStorage
+
   useEffect(() => {
     const saved = localStorage.getItem('resumeData');
     if (saved) {
@@ -218,8 +213,7 @@ function App() {
     setIsLoaded(true);
   }, []);
 
-  // Сохранение в localStorage
-  
+
   useEffect(() => {
     if (isLoaded) {
       const dataToSave = {
@@ -259,7 +253,9 @@ function App() {
           </div>
         </header>
 
-        {/* ОСНОВНОЙ КОНТЕНТ */}
+
+
+
         <main className="main-content" style={{ flex: 1, padding: 'clamp(20px, 5vw, 40px) clamp(15px, 4vw, 20px)' }}>
           <Routes>
             <Route path="/" element={
@@ -289,7 +285,7 @@ function App() {
                   />
                 </div>
 
-                {/* Правая колонка — предпросмотр */}
+                {/*предпросмотр */}
                 <div className="preview-section preview-sticky" style={{ 
                   flex: '1', 
                   minWidth: '280px', 
@@ -319,7 +315,7 @@ function App() {
           </Routes>
         </main>
 
-        {/* ФУТЕР */}
+
         <footer className="app-footer" style={{ background: 'var(--color-card)', padding: 'clamp(15px, 4vw, 20px)', borderTop: '1px solid var(--color-border)', textAlign: 'center' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <p style={{ color: 'var(--color-text-light)', fontSize: 'clamp(10px, 3vw, 12px)' }}>
@@ -331,7 +327,8 @@ function App() {
           </div>
         </footer>
 
-        {/* Скрытый блок для PDF */}
+
+
         <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
           <div ref={pdfRef}>
             <ResumePDF 
