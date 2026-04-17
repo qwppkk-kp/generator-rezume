@@ -237,17 +237,17 @@ function App() {
           <div className="header-container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <div>
-                <h1 style={{ color: '#7C6E65', margin: 0, fontSize: 'clamp(20px, 5vw, 24px)' }}>
-                  Генератор резюме
+                <h1 style={{ color: 'var(--color-primary)', margin: 0, fontSize: 'clamp(20px, 5vw, 24px)' }}>
+                Генератор резюме
                 </h1>
-                <p style={{ color: '#6B6B6B', fontSize: 'clamp(10px, 3vw, 12px)', margin: '5px 0 0 0' }}>
-                  Создайте резюме за 5 минут
+                <p style={{ color: 'var(--color-text-light)', fontSize: 'clamp(10px, 3vw, 12px)', margin: '5px 0 0 0' }}>
+                Создайте резюме за 5 минут
                 </p>
               </div>
             </Link>
             <div style={{ display: 'flex', gap: 'clamp(15px, 4vw, 20px)' }}>
-              <Link to="/about" style={{ color: '#7C6E65', textDecoration: 'none', fontSize: 'clamp(12px, 3.5vw, 14px)' }}>О проекте</Link>
-              <Link to="/contacts" style={{ color: '#7C6E65', textDecoration: 'none', fontSize: 'clamp(12px, 3.5vw, 14px)' }}>Контакты</Link>
+              <Link to="/about" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontSize: 'clamp(12px, 3.5vw, 14px)' }}>О проекте</Link>
+              <Link to="/contacts" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontSize: 'clamp(12px, 3.5vw, 14px)' }}>Контакты</Link>
               <ThemeToggle />
             </div>
           </div>
@@ -294,8 +294,8 @@ function App() {
                   top: '20px', 
                   alignSelf: 'flex-start' 
                 }}>
-                  <h2 style={{ color: '#7C6E65', textAlign: 'center', marginBottom: '20px', fontSize: 'clamp(18px, 5vw, 22px)', fontWeight: '600' }}>
-                    Предпросмотр
+                  <h2 style={{ color: 'var(--color-primary)', textAlign: 'center', marginBottom: '20px', fontSize: 'clamp(18px, 5vw, 22px)', fontWeight: '600' }}>
+                  Предпросмотр
                   </h2>
                   <div ref={previewRef}>
                     <Preview 
@@ -321,8 +321,8 @@ function App() {
             <p style={{ color: 'var(--color-text-light)', fontSize: 'clamp(10px, 3vw, 12px)' }}>
               © 2025 Генератор резюме. Все данные обрабатываются локально, без передачи на сервер.
             </p>
-            <p style={{ color: '#6B6B6B', fontSize: 'clamp(9px, 2.5vw, 11px)', marginTop: '5px' }}>
-              Профессиональное резюме без усилий
+            <p style={{ color: 'var(--color-text-light)', fontSize: 'clamp(9px, 2.5vw, 11px)', marginTop: '5px' }}>
+            Профессиональное резюме без усилий
             </p>
           </div>
         </footer>
