@@ -6,7 +6,7 @@ for (let i = 2030; i >= 1950; i--) {
   years.push(i);
 }
 
-// форматирование
+
 const capitalizeFirst = (str) => {
   if (!str) return str;
   return str.charAt(0).toUpperCase() + str.slice(1);
