@@ -15,7 +15,7 @@
   --container-width-sm: 90%;
 }
 
-/* темная тема */
+
 body.dark-theme {
   --color-bg: #1a1a1a;
   --color-card: #2d2d2d;
@@ -48,7 +48,6 @@ body {
 }
 
 
-/* Планшеты и маленькие ноутбуки */
 @media screen and (max-width: 1024px) {
   .container {
     width: var(--container-width-md);
@@ -59,7 +58,7 @@ body {
   }
 }
 
-/* Смартфоны */
+
 @media screen and (max-width: 768px) {
   .container {
     width: var(--container-width-sm);
@@ -172,7 +171,7 @@ body {
   }
 }
 
-/* Очень маленькие смартфоны (до 480px) */
+
 @media screen and (max-width: 480px) {
   .main-content {
     padding: 15px 12px !important;
