@@ -285,7 +285,7 @@ function App() {
                   />
                 </div>
 
-                {/*предпросмотр */}
+                
                 <div className="preview-section preview-sticky" style={{ 
                   flex: '1', 
                   minWidth: '280px', 
