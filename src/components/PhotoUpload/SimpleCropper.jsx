@@ -149,7 +149,7 @@ const SimpleCropper = ({ image, onSave, onClose }) => {
         </div>
         
         <div style={{ color: '#aaa', fontSize: '11px', marginTop: '10px' }}>
-          💡 Перетащите фото • Ползунок для масштаба
+          Перетащите фото • Ползунок для масштаба
         </div>
       </div>
     </div>
