@@ -4,7 +4,7 @@ export const exportToWord = async (formData, photo, education, experience, skill
   
   const children = [];
 
-  // (ФИО)
+
   children.push(
     new Paragraph({
       text: formData.name || 'Резюме',
@@ -133,7 +133,7 @@ export const exportToWord = async (formData, photo, education, experience, skill
     }]
   });
 
-  // генерация и скачивание
+
   const blob = await Packer.toBlob(doc);
   const link = document.createElement('a');
   const url = URL.createObjectURL(blob);
