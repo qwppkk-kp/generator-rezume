@@ -2,7 +2,7 @@ import React from 'react';
 
 const Preview = ({ formData, photo, education, experience, skills, template }) => {
   
-  // классика
+
   const ClassicTemplate = () => (
     <div style={{
       background: 'var(--color-card)',
@@ -96,7 +96,7 @@ const Preview = ({ formData, photo, education, experience, skills, template }) =
     </div>
   );
 
-  // современно
+
   const ModernTemplate = () => (
     <div style={{
       background: 'var(--color-card)',
@@ -176,7 +176,6 @@ const Preview = ({ formData, photo, education, experience, skills, template }) =
     </div>
   );
 
-  // минималистика
   const MinimalTemplate = () => (
     <div style={{
       background: 'var(--color-card)',
